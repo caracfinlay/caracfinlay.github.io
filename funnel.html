@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>NYC Rental Insights</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Cara Finlay</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<!-- <li class="active"><a href="generic.html">Generic Page</a></li> -->
+				<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			</ul>
+			<ul class="icons">
+				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<span class="date">May, 2023</span>
+					<h1>New York City<br />
+						Rental Insights</h1>
+					<p>This project is centered around data preprocessing in Python, followed by data exploration using
+						SQLite. The findings are
+						presented below in a comprehensive final report and a short video presentation. For added fun
+						and
+						interactivity, I created a dashboard in Tableau.
+
+					</p>
+
+
+				</header>
+
+				<div class="row">
+					<div class="col-4 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="pillow_palooza_data_wrangling.html" class="button primary fit" target="_blank"
+									rel="noopener noreferrer">Python
+									Notebook</a></li>
+						</ul>
+					</div>
+					<div class="col-4 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="sql_palooza.html" class="button primary fit" target="_blank"
+									rel="noopener noreferrer">SQL Queries</a></li>
+
+						</ul>
+					</div>
+					<div class="col-4 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Tableau Dashboard</a></li>
+						</ul>
+					</div>
+				</div>
+				<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe
+						src="https://www.loom.com/embed/ea6aca7c01f247b0bf51e42cbc73a71b?sid=ff31bba8-ebe1-4987-8d0b-6ca9919045ba"
+						frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+				<br>
+				<!-- <div class="image main"><img src="images/home/New York City Rental Insights.png" alt="" /></div> -->
+				<h2>Summary</h2>
+				<p>This report provides insights into the short-term rental market in New York City, aiming to assist
+					Pillow Palooza, a start-up focused on short-term rentals, in identifying opportunities for growth
+					and success. The analysis focuses on factors such as high revenue, popularity, and untapped supply.
+					The average annual revenue for all rental types is $22,616, with entire homes or apartments
+					generating the highest revenue at $40,991 per year. Manhattan stands out with the highest average
+					annual revenue among boroughs at $38,115, while Queens, Bronx, and Staten Island fall below the
+					average. The report recommends targeting neighborhoods that exceed the average annual revenue in the
+					top 5% for each rental type, considering factors like neighborhood popularity, proximity to
+					attractions, safety, and amenities.</p>
+
+				<h2>Context</h2>
+
+				<p>Pillow Palooza aims to disrupt the traditional real estate market by offering short-term rental
+					options for travelers. To achieve this, insights into the New York City short-term rental market are
+					essential. The main objective of this report is to provide valuable information to <b>maximize
+						revenue</b>
+					and <b>occupancy rates</b> for the company's short-term rental properties. To accomplish this, three
+					key
+					questions are addressed: which neighborhoods to invest in, which property types to focus on, and how
+					to price rentals competitively in the market.
+				</p>
+
+				<h2>Results</h2>
+				<p><span class="image right"><img src="images/pillow-palooza/pillow-pie-chart.png" alt="" /></span>The
+					analysis begins
+					by
+					considering high revenue factors, using the metric of Annual Revenue,
+					calculated by multiplying the number of days booked in a year by the price per day. The average
+					annual revenue for all rental types is $29,510. Entire homes or apartments generate the highest
+					revenue at $40,991 followed by private rooms at $17,111 and shared rooms at $9,746.</p>
+				<p>
+				<p>Shared rooms only account for 2.32% of the total data, while entire homes/apartments make up 52.64%
+					and private rooms make up 45.04%. Given that annual revenue is more than double for entire
+					apartments compared to private rooms, and there is limited data for shared rooms, the focus will be
+					on targeting entire apartments.</p>
+				<p>When examining average annual revenue by borough, Manhattan stands out with the highest average
+					revenue of $38,115, nearly double the overall average of all boroughs. Brooklyn also performs well
+					with an average of $26,685. However, Queens ($16,899), Bronx ($13,378), and Staten Island ($12,899)
+					fall below the average.</p>
+				<p>To identify neighborhoods for investment, the report focuses on the top 10% neighborhoods for the
+					entire apartment rental type in the boroughs of Brooklyn and Manhattan. Median annual revenue per
+					listing per neighborhood is used for this analysis to mitigate the impact of extreme rental prices.
+				</p>
+
+				<span class="image fit"><img src="images/pillow-palooza/top_10_perc_neighbourhoods.png" alt="" /></span>
+
+				<p>The graph shows the median annual revenue for the top 10 % of neighborhoods for the rental type:
+					<b>Entire Apartment/house</b>, Boroughs: <b>Manhattan</b> and <b>Brooklyn</b>.
+				</p>
+
+				<p>The following neighborhoods are identified as top performers:</p>
+				<ol>
+					<li>Sea Gate (Brooklyn) - Annual Revenue: $89,525</li>
+					<li>Navy Yard (Brooklyn) - Annual Revenue: $98,475</li>
+					<li>Tribeca (Manhattan) - Annual Revenue: $70,765</li>
+					<li>Noho (Manhattan) - Annual Revenue: $65,700</li>
+					<li>Civic Centre (Manhattan) - Annual Revenue: $64,170</li>
+					<li>Soho (Manhattan) - Annual Revenue: $61,047</li>
+					<li>West Village (Manhattan) - Annual Revenue: $58,820</li>
+					<li>Nolita (Manhattan) - Annual Revenue: $58,400</li>
+				</ol>
+
+				<p>Next we consider the amount of listings available in the areas with high annual revenue.
+					Our target areas can be identified as those which show potential with many available property
+					listings, high occupancy and high revenue. These include
+				</p>
+
+				<ul>
+					<li>West Village
+					<li>Soho</li>
+					<li>Nolita</li>
+					<li>Tribeca</li>
+					<li>Noho
+					</li>
+				</ul>
+
+				<p>Our potentially untapped areas show potential with high revenue, but there aren’t many listings
+					available in these areas. Further analysis of the following areas is needed:</p>
+				<ul>
+					<li>Civic Centre</li>
+					<li>Navy Yard</li>
+					<li>Sea Gate</li>
+
+				</ul>
+
+				<h2>Recommendation:</h2>
+
+				<p>Based on the analysis, Pillow Palooza should consider investing in the neighborhoods identified as
+					top performers for each rental type, as they demonstrate higher-than-average annual revenue
+					potential. If only one rental type is chosen for initial focus, it would be entire apartments or
+					houses. The boroughs, Manhattan and Brookly show the highest occupancy rate and revenue potential.
+					The neighbourhoods, West Village, Soho, Nolita, Tribeca and Noho have enough data points to identify
+					as top performers in the short rental market, whereas Civic Centre, Navy Yard and Sea Gate show
+					promise as high revenue areas, but they don’t yet have many rentals available. It would be worth
+					investigating if these areas are potentially untapped.</p>
+
+				<p>Following these findings we should conduct further research and analysis specific to the target
+					audience's preferences and needs to provide valuable insights for choosing which areas to invest in.
+					Additional factors to consider for analysis include: neighbourhood popularity, proximity to
+					attractions, safety, and amenities specific to the target audience. We will need to validate these
+					findings by cross-referencing with external sources and conducting real-world experiments with a
+					subset of properties.</p>
+
+				<ol>
+					<li>Neighbourhood Popularity: Tribeca in Manhattan and Sea Gate in Brooklyn are highly popular among
+						travellers due to their unique attractions, cultural experiences, and vibrant atmosphere, making
+						them desirable destinations for short-term rentals.</li>
+					<li>Proximity to Tourist Attractions or Business Centers: Tribeca in Manhattan offers close
+						proximity to popular tourist attractions like the Tribeca Film Festival, trendy restaurants, and
+						upscale shopping areas, while Navy Yard in Brooklyn is near the thriving industrial park and
+						cultural center of Brooklyn Navy Yard, making these neighborhoods attractive to both leisure and
+						business travelers.
+					</li>
+					<li>Safety: Manhattan's Tribeca neighborhood and Brooklyn's Sea Gate, being a gated community, are
+						known for their reputation of being safe and well-policed, providing potential guests with an
+						added sense of security.</li>
+					<li>Local Amenities: Tribeca and Navy Yard boast a wide range of local amenities, including upscale
+						dining options, boutique shopping, art galleries, and parks, enhancing the overall guest
+						experience and making short-term rentals in these areas more appealing.</li>
+					<li>Target Audience Preferences: Different neighborhoods may align more closely with specific target
+						audiences. For families, neighborhoods near parks, playgrounds, and family-friendly attractions
+						would be desirable, while young professionals may prefer neighborhoods with a vibrant nightlife
+						and proximity to trendy bars and restaurants.</li>
+				</ol>
+				</p>
+
+
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+
+
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; ccfinlay</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

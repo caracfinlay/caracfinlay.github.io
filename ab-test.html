@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>A/B Test</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Cara Finlay</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<!-- <li class="active"><a href="generic.html">Generic Page</a></li> -->
+				<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			</ul>
+			<ul class="icons">
+				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<span class="date">April, 2023</span>
+					<h1>A/B Test</h1>
+					<h3>Glowbox mobile banner</h3>
+					<p>This project is centered around data preprocessing in Python, followed by an A/B test conducted
+						using Python libraries: . The findings are
+						presented below in a comprehensive final report and a short video presentation. See Part 2 here.
+
+					</p>
+
+
+				</header>
+
+
+
+				<div class="row">
+					<div class="col-4 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="https://github.com/caracfinlay/AB-test-GloBox/blob/1c6c66d44c36be5a87b0716bd26c735de2a2003e/python_workings_glowbox.ipynb"
+									class="button primary fit" ;" target="_blank" rel="noopener noreferrer">Python
+									Notebook</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+				<div style="position: relative; padding-bottom: 56.074766355140184%; height: 0;"><iframe
+						src="https://www.loom.com/embed/92e3c4f957ca422c8a225ff421df342a?sid=e6b0d174-b2c6-4dd4-93f9-15ca40c2b6cf"
+						frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+				<br>
+				<!-- <div class="image main"><img src="images/home/New York City Rental Insights.png" alt="" /></div> -->
+				<h2>Data Preparation</h2>
+				<p>
+					ETL in PostgreSQL: The dataset is stored in bi.io database
+					The three tables were joined and only the necessary columns and rows were extracted on a user level
+					using the query below:</p>
+				<span class="image fit"><img src="images/glowbox/glowbox-sql-query.png" alt="" /></span>
+
+				<h2>Introduction</h2>
+
+				<p>The goal of the test was to determine if the treatment had a statistically significant impact on the
+					average spent per user and / or user conversion rate.
+
+				</p>
+
+				<h2>Hypothesis</h2>
+				<p>Two hypotheses were formulated for both average spent per user and user conversion rate.</p>
+
+				<h2>Test Users and Sample Selection</h2>
+				<p>Randomly selected users from the website's traffic were included in the A/B test. Users who have
+					previously participated in an A/B test on the website were excluded. The control group consisted of
+					users who saw the existing website user interface with no banner, while the treatment group
+					consisted of users who saw the updated website user interface with the food and drink banner.</p>
+				<p>
+
+				<h2>Sample Size Determination</h2>
+				<p>The sample size should be large enough to detect meaningful differences in the metrics being
+					measured. The control group had 24,343 users, the treatment group had 24,600 users, and the total
+					users were 48,943.</p>
+
+				<h2>Test Duration</h2>
+				<p>The duration of the A/B test depended on the website's traffic and the expected effect size, which
+					resulted in a total of 14 days.</p>
+
+				<h2>Metrics</h2>
+				<p>The metrics used in the A/B test were average spent per user, measured by mean, and user conversion
+					rate, measured by proportion.</p>
+
+				<h2>Statistical Method</h2>
+				<p>Two-tailed t-test was used to compare the mean spent per user, and a two-tailed z-test was used to
+					compare the conversion rate of the control and treatment groups. The level of significance (alpha)
+					was set at 0.05 for both tests.</p>
+
+				<h2>Set-Up</h2>
+				<p>The experiment pertained to the mobile site only. Users saw either the current webpage or the webpage
+					displaying a banner of the food and drink category.</p>
+
+				<h2>Hypothesis Test - Average Spent Per User</h2>
+				<p>To test the impact of the banner on the average amount spent per user, we conducted a hypothesis test
+					using a two-tailed T-test to measure the average difference in means between the Control and
+					Treatment groups. The significance level was set at 0.05 or 5%, and the confidence level was set at
+					0.95 or 95%.
+					<br><br>The mean for the Control group was found to be 3.375, with a standard error of 0.166. The
+					mean
+					for the Treatment group was 3.391, with a standard error of 0.162.
+					<br><br>The critical value was found to be 1.960, and the confidence interval for the difference in
+					means was calculated to be -0.4386 to 0.4713. The test-statistic was found to be 0.0704.
+					<br><br>Based on our analysis, we conclude that the results of the hypothesis test were
+					statistically
+					insignificant. Therefore, we fail to reject the null hypothesis that there is no difference in the
+					mean amount spent per user between the Control and Treatment groups.
+				</p>
+				<span class="image fit"><img src="images/glowbox/average-spent.png" alt="" /></span>
+				<h2>Hypothesis Test - Conversion Rate</h2>
+				<p2>We conducted another hypothesis test to determine whether there was a difference in conversion rates
+					between the Control and Treatment groups. The null hypothesis stated that the conversion rates were
+					the same, while the alternative hypothesis stated that they were different. The significance level
+					was set at 0.05 and the confidence level was set at 0.95.
+					<br><br>The conversion rate for the Control group was found to be 0.0392 with a standard error of
+					0.0012, while the conversion rate for the Treatment group was 0.0463 with a standard error of
+					0.0013. The difference in proportion was 0.007.
+					<br><br>The critical value was found to be 1.9600, and the confidence interval for the difference in
+					proportions using the pooled standard error was calculated to be 0.0035 to 0.0107. The pooled
+					proportion test statistic was -3.864, and the proportion p-value was 0.000111.
+					<br><br>Based on our analysis, we reject the null hypothesis and conclude that there is a
+					significant
+					difference in conversion rates between the Control and Treatment groups. We used a two-sample
+					two-sided z-interval for a difference in proportions assuming equal proportions, and our results
+					indicate that the Treatment group had a higher conversion rate than the Control group.
+				</p2>
+				<span class="image fit"><img src="images/glowbox/conversion-rate.png" alt="" /></span>
+				<h2>Conclusion</h2>
+				<p>In conclusion, the A/B test conducted by the Growth and Engineering teams at Glowbox aimed to
+					increase revenue and conversion rate by highlighting key products in the food and drink category on
+					the mobile website. The test involved a control group and a treatment group, and two hypotheses were
+					formulated for the average spent per user and user conversion rate. The statistical methods used
+					were two-tailed t-test and z-test, and the level of significance was set at 0.05 for both tests.
+					<br><br>The results of the hypothesis test for the average spent per user showed that there was no
+					statistically significant difference between the Control and Treatment groups. However, for the user
+					conversion rate, the test indicated a significant difference between the two groups, with the
+					Treatment group having a higher conversion rate than the Control group.
+					<br><br>Based on the findings, the Growth and Engineering teams at Glowbox can conclude that
+					highlighting the food and drink category on the mobile website had a positive impact on user
+					conversion rate, but no impact on the average amount spent per user. The teams can use these
+					findings to make informed decisions and further optimize their mobile website to increase revenue
+					and improve user experience.
+					<br><br><b>Note:</b> Inferential statistics were performed using Python. For this project I
+					challenged
+					myself to code the statistical functions from scratch using the mathematical formulas, as opposed to
+					relying solely on the scipy.stats library.
+				</p>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+
+
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; ccfinlay</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
