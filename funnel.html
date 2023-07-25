@@ -7,13 +7,20 @@
 <html>
 
 <head>
-	<title>NYC Rental Insights</title>
+	<title>Funnel Analysis</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		.custom-text {
+			color: rgb(23, 23, 149);
+			font-weight: bold;
+			font-style: italic;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -47,15 +54,15 @@
 			<!-- Post -->
 			<section class="post">
 				<header class="major">
-					<span class="date">May, 2023</span>
-					<h1>New York City<br />
-						Rental Insights</h1>
-					<p>This project is centered around data preprocessing in Python, followed by data exploration using
-						SQLite. The findings are
-						presented below in a comprehensive final report and a short video presentation. For added fun
-						and
-						interactivity, I created a dashboard in Tableau.
-
+					<span class="date">June, 2023</span>
+					<h1>Metrocar<br />
+						Funnel Analysis</h1>
+					<p>SQL is utilized to aggregate data on a user level. The sales funnel incorporates "percent of
+						previous" and "percent of top" metrics, and was separately created using SQL, Python, and
+						Tableau for a
+						comprehensive learning experience. The interactive Tableau funnel allows further filtering by
+						granularity, metric, and age ranges. The findings are presented below in a
+						final report and a short video.
 					</p>
 
 
@@ -64,158 +71,258 @@
 				<div class="row">
 					<div class="col-4 col-12-small">
 						<ul class="actions stacked">
-							<li><a href="pillow_palooza_data_wrangling.html" class="button primary fit" target="_blank"
-									rel="noopener noreferrer">Python
-									Notebook</a></li>
+							<li><a href="https://github.com/caracfinlay/funnel-analysis-metrocars/blob/main/SQL_queries.ipynb"
+									class="button primary fit" target="_blank" rel="noopener noreferrer">SQL Queries</a>
+							</li>
 						</ul>
 					</div>
 					<div class="col-4 col-12-small">
 						<ul class="actions stacked">
-							<li><a href="sql_palooza.html" class="button primary fit" target="_blank"
-									rel="noopener noreferrer">SQL Queries</a></li>
+							<li><a href="https://github.com/caracfinlay/funnel-analysis-metrocars/blob/main/aggregated_data_python.ipynb"
+									class="button primary fit" target="_blank" rel="noopener noreferrer">Python
+									Notebook</a></li>
 
 						</ul>
 					</div>
 					<div class="col-4 col-12-small">
 						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Tableau Dashboard</a></li>
+							<li><a href="https://public.tableau.com/app/profile/cara.finlay/viz/MetrocarFunnel_16888484739980/StackedUserFunnel"
+									class="button primary fit" target="_blank" rel="noopener noreferrer">Tableau
+									Funnel</a></li>
 						</ul>
 					</div>
 				</div>
+
+
+
+				</ul>
 				<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe
-						src="https://www.loom.com/embed/ea6aca7c01f247b0bf51e42cbc73a71b?sid=ff31bba8-ebe1-4987-8d0b-6ca9919045ba"
+						src="https://www.loom.com/embed/9aca3b35b7ec42b79b0e4ffff95d6e8b?sid=c2620e9b-7e5d-4688-9535-82d4c6aa1862"
 						frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
 						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 				<br>
 				<!-- <div class="image main"><img src="images/home/New York City Rental Insights.png" alt="" /></div> -->
-				<h2>Summary</h2>
-				<p>This report provides insights into the short-term rental market in New York City, aiming to assist
-					Pillow Palooza, a start-up focused on short-term rentals, in identifying opportunities for growth
-					and success. The analysis focuses on factors such as high revenue, popularity, and untapped supply.
-					The average annual revenue for all rental types is $22,616, with entire homes or apartments
-					generating the highest revenue at $40,991 per year. Manhattan stands out with the highest average
-					annual revenue among boroughs at $38,115, while Queens, Bronx, and Staten Island fall below the
-					average. The report recommends targeting neighborhoods that exceed the average annual revenue in the
-					top 5% for each rental type, considering factors like neighborhood popularity, proximity to
-					attractions, safety, and amenities.</p>
-
-				<h2>Context</h2>
-
-				<p>Pillow Palooza aims to disrupt the traditional real estate market by offering short-term rental
-					options for travelers. To achieve this, insights into the New York City short-term rental market are
-					essential. The main objective of this report is to provide valuable information to <b>maximize
-						revenue</b>
-					and <b>occupancy rates</b> for the company's short-term rental properties. To accomplish this, three
-					key
-					questions are addressed: which neighborhoods to invest in, which property types to focus on, and how
-					to price rentals competitively in the market.
-				</p>
-
-				<h2>Results</h2>
-				<p><span class="image right"><img src="images/pillow-palooza/pillow-pie-chart.png" alt="" /></span>The
-					analysis begins
-					by
-					considering high revenue factors, using the metric of Annual Revenue,
-					calculated by multiplying the number of days booked in a year by the price per day. The average
-					annual revenue for all rental types is $29,510. Entire homes or apartments generate the highest
-					revenue at $40,991 followed by private rooms at $17,111 and shared rooms at $9,746.</p>
-				<p>
-				<p>Shared rooms only account for 2.32% of the total data, while entire homes/apartments make up 52.64%
-					and private rooms make up 45.04%. Given that annual revenue is more than double for entire
-					apartments compared to private rooms, and there is limited data for shared rooms, the focus will be
-					on targeting entire apartments.</p>
-				<p>When examining average annual revenue by borough, Manhattan stands out with the highest average
-					revenue of $38,115, nearly double the overall average of all boroughs. Brooklyn also performs well
-					with an average of $26,685. However, Queens ($16,899), Bronx ($13,378), and Staten Island ($12,899)
-					fall below the average.</p>
-				<p>To identify neighborhoods for investment, the report focuses on the top 10% neighborhoods for the
-					entire apartment rental type in the boroughs of Brooklyn and Manhattan. Median annual revenue per
-					listing per neighborhood is used for this analysis to mitigate the impact of extreme rental prices.
-				</p>
-
-				<span class="image fit"><img src="images/pillow-palooza/top_10_perc_neighbourhoods.png" alt="" /></span>
-
-				<p>The graph shows the median annual revenue for the top 10 % of neighborhoods for the rental type:
-					<b>Entire Apartment/house</b>, Boroughs: <b>Manhattan</b> and <b>Brooklyn</b>.
-				</p>
-
-				<p>The following neighborhoods are identified as top performers:</p>
-				<ol>
-					<li>Sea Gate (Brooklyn) - Annual Revenue: $89,525</li>
-					<li>Navy Yard (Brooklyn) - Annual Revenue: $98,475</li>
-					<li>Tribeca (Manhattan) - Annual Revenue: $70,765</li>
-					<li>Noho (Manhattan) - Annual Revenue: $65,700</li>
-					<li>Civic Centre (Manhattan) - Annual Revenue: $64,170</li>
-					<li>Soho (Manhattan) - Annual Revenue: $61,047</li>
-					<li>West Village (Manhattan) - Annual Revenue: $58,820</li>
-					<li>Nolita (Manhattan) - Annual Revenue: $58,400</li>
-				</ol>
-
-				<p>Next we consider the amount of listings available in the areas with high annual revenue.
-					Our target areas can be identified as those which show potential with many available property
-					listings, high occupancy and high revenue. These include
-				</p>
-
+				<h3>Table of Contents</h3>
 				<ul>
-					<li>West Village
-					<li>Soho</li>
-					<li>Nolita</li>
-					<li>Tribeca</li>
-					<li>Noho
-					</li>
-				</ul>
+					<li><a href="#section1">Introduction</a></li>
+					<li><a href="#section2">Summary</a></li>
+					<li><a href="#section3">Metrocar's Funnel</a></li>
+					<li><a href="#section4">Business Questions</a></li>
+					<li><a href="#section5">Further Research</a></li>
+					<li><a href="#section6">Immediate Recommendations</a></li>
 
-				<p>Our potentially untapped areas show potential with high revenue, but there aren’t many listings
-					available in these areas. Further analysis of the following areas is needed:</p>
-				<ul>
-					<li>Civic Centre</li>
-					<li>Navy Yard</li>
-					<li>Sea Gate</li>
+					<br>
 
-				</ul>
+					<h2 id="section1">Introduction</h2>
+					<p>This project aims to analyze the customer funnel of Metrocar, a ride-sharing app (similar to
+						Uber/Lyft), to identify areas for improvement and optimization. SQL was used for the initial
+						data
+						analysis, as well as aggregating the data to a user level, which could then be used in Tableau.
+						Tableau was used for the visualisation of the funnel and other questions in our analysis. The
+						stakeholders have asked several business questions that can uncover valuable insights for
+						improving
+						specific areas of the customer funnel.</p>
 
-				<h2>Recommendation:</h2>
-
-				<p>Based on the analysis, Pillow Palooza should consider investing in the neighborhoods identified as
-					top performers for each rental type, as they demonstrate higher-than-average annual revenue
-					potential. If only one rental type is chosen for initial focus, it would be entire apartments or
-					houses. The boroughs, Manhattan and Brookly show the highest occupancy rate and revenue potential.
-					The neighbourhoods, West Village, Soho, Nolita, Tribeca and Noho have enough data points to identify
-					as top performers in the short rental market, whereas Civic Centre, Navy Yard and Sea Gate show
-					promise as high revenue areas, but they don’t yet have many rentals available. It would be worth
-					investigating if these areas are potentially untapped.</p>
-
-				<p>Following these findings we should conduct further research and analysis specific to the target
-					audience's preferences and needs to provide valuable insights for choosing which areas to invest in.
-					Additional factors to consider for analysis include: neighbourhood popularity, proximity to
-					attractions, safety, and amenities specific to the target audience. We will need to validate these
-					findings by cross-referencing with external sources and conducting real-world experiments with a
-					subset of properties.</p>
-
-				<ol>
-					<li>Neighbourhood Popularity: Tribeca in Manhattan and Sea Gate in Brooklyn are highly popular among
-						travellers due to their unique attractions, cultural experiences, and vibrant atmosphere, making
-						them desirable destinations for short-term rentals.</li>
-					<li>Proximity to Tourist Attractions or Business Centers: Tribeca in Manhattan offers close
-						proximity to popular tourist attractions like the Tribeca Film Festival, trendy restaurants, and
-						upscale shopping areas, while Navy Yard in Brooklyn is near the thriving industrial park and
-						cultural center of Brooklyn Navy Yard, making these neighborhoods attractive to both leisure and
-						business travelers.
-					</li>
-					<li>Safety: Manhattan's Tribeca neighborhood and Brooklyn's Sea Gate, being a gated community, are
-						known for their reputation of being safe and well-policed, providing potential guests with an
-						added sense of security.</li>
-					<li>Local Amenities: Tribeca and Navy Yard boast a wide range of local amenities, including upscale
-						dining options, boutique shopping, art galleries, and parks, enhancing the overall guest
-						experience and making short-term rentals in these areas more appealing.</li>
-					<li>Target Audience Preferences: Different neighborhoods may align more closely with specific target
-						audiences. For families, neighborhoods near parks, playgrounds, and family-friendly attractions
-						would be desirable, while young professionals may prefer neighborhoods with a vibrant nightlife
-						and proximity to trendy bars and restaurants.</li>
-				</ol>
-				</p>
+					<h2 id="section2">
+						Summary
+					</h2>
 
 
+					<p>The analysis of Metrocar's customer funnel has provided valuable insights for optimization. The
+						lowest conversion rate occurs between driver acceptance and completion of the ride steps
+						(50.77%).
+						Marketing efforts should focus on targeting iOS users (60.53% of app downloads). The largest
+						identifiable age segment falls within the 35-44 age range, representing 21.95% of the total
+						users.
+						The 18-24 age group exhibits strong performance, while the 45-54 age group shows potential for
+						improvement. Surge pricing during morning (8am-9am) and afternoon (4pm-5pm) spikes can
+						effectively
+						capitalise on peak demand.
+					</p>
+
+					<h2 id="section3">Metrocar's Funnel</h2>
+					<p>
+						The customer funnel for Metrocar includes the following stages:
+					<ol>
+						<li><b>App Download:</b> A user downloads the Metrocar app from the App Store or Google Play
+							Store.
+						</li>
+						<li><b>Signup:</b> The user creates an account in the Metrocar app, including their name, email,
+							phone
+							number, and payment information.</li>
+						<li><b>Request Ride:</b> The user opens the app and requests a ride by entering their pickup
+							location,
+							destination, and ride capacity (2 to 6 riders).</li>
+						<li><b>Driver Acceptance:</b> A nearby driver receives the ride request and accepts the ride.
+						</li>
+						<li><b>Ride:</b> The driver arrives at the pickup location, and the user gets in the car and
+							rides
+							to their
+							destination.</li>
+						<li><b>Payment:</b> After the ride, the user is charged automatically through the app,and a
+							receipt
+							is sent
+							to their email.</li>
+						<li><b>Review:</b> The user is prompted to rate their driver and leave a review of their ride
+							experience.
+						</li>
+
+					</ol>
+
+					</p>
+
+					<h2 id="section4">Business questions</h2>
+
+					<p class="custom-text"> 1. What steps of the funnel should we research and
+						improve? Are
+						there any specific drop-off points
+						preventing users from completing their first ride?</p>
+
+					<p>Although improvements can be made at the sign-up and ride request point of the funnel, the
+						biggest
+						drop-off is observed after the driver has accepted the ride. Only 50.77% of accepted rides were
+						completed. 74.65% of users downloading the app signed up and 70.40% of signed up users requested
+						a
+						ride.</p>
+
+					<span class="image fit"><img src="images/funnel/user-funnel.png" alt="" /></span>
+
+
+					<p class="custom-text">2. Metrocar currently supports 3 different platforms: ios, android, and web.
+						To
+						recommend where to
+						focus our marketing budget for the upcoming year, what insights can we make based on the
+						platform?
+					</p>
+
+					<p><span class="image right"><img src="images/funnel/pie-chart-platform.png" alt="" /></span>Based
+						on
+						the platform distribution of Metrocar's app downloads, the following insights can guide
+						marketing budget allocation for the upcoming year. Out of the total 23,607 downloads, iOS
+						devices
+						accounted for 60.53%, while Android devices represented 29.37% and web downloads only comprised
+						10.09%.</p>
+					<br><br>
+					<p>Notably, the number of monthly downloads remained relatively consistent throughout the year.
+						September had the highest number of iOS downloads (1,267), while Android downloads were lowest
+						during that month. To optimise marketing efforts, it is recommended to prioritise targeting iOS
+						users.</p>
+					<span class="image fit"><img src="images/funnel/line-graph-monthly-downloads.png" alt="" /></span>
+
+					<p class="custom-text"> 3. What age groups perform best at each stage of our funnel? Which age
+						group(s)
+						likely contain our
+						target customers?
+					</p>
+
+					<p>Before observing insights based on the age groups in each category it is important to note the
+						age
+						distribution among the users. Notably, the "None" category, which represents undisclosed or
+						unknown
+						ages, comprises 30.10% of the user base. The largest identifiable segment falls within the 35-44
+						age
+						range, representing 29.40% of the total users. The 25-34 age group closely follows with 19.56%.
+						The
+						18-24 and 45-54 age groups make up smaller proportions at 10.58% and 10.36%, respectively.
+					</p>
+					<span class="image fit"><img src="images/funnel/bar-age-signup.png" alt="" /></span>
+					<p>There weren't obviously significant differences among the age groups for their conversion rates
+						in
+						the funnel. However, certain age ranges showed subtle variations in conversion rates at
+						different
+						funnel steps. Among the analyzed age groups, the 18-24 age group consistently performed well in
+						several funnel steps. They had the highest conversion rates in the driver acceptance step
+						(99.15%)
+						and the completed ride step (51.98%). However, the same age group had the lowest conversion rate
+						in
+						the ride request step (69.71%), suggesting some room for improvement in that particular stage.
+						<br><br>On the other hand, the 45-54 age group consistently showed lower conversion rates
+						compared
+						to other age groups. They had the lowest conversion rate in the driver acceptance step (98.6%)
+						and
+						the completed ride step (49.72%). However, they had the highest conversion rate in the completed
+						review step (71.90%). Analysing the reviews could help identify reasons for the lower conversion
+						rate in this age group.
+					</p>
+					<span class="image fit"><img src="images/funnel/funnel-conversion-age.png" alt="" /></span>
+					<i>The red blocks indicate the age group with the lowest conversion rate for that step and the
+						yellow
+						blocks indicate the highest conversion for that step.</i>
+					<span class="image fit"><img src="images/funnel/funnel-pct-age.png" alt="" /></span>
+					<p>An analysis of the funnel indicates that users in the 35-44 age group achieved the highest
+						percentage
+						(25.71%) of reaching the end of the funnel, closely followed by the 18-24 age group (25.36%).
+						These
+						findings suggest that these two age groups performed the best in terms of funnel completion.</p>
+					<p>Considering the size of each age group, it is likely that our target clients fall within the
+						35-44
+						age range. The differences in conversion rates and percent of top is very small and an A/B is
+						recommended to identify its significance.</p>
+					<p class="custom-text"> 4. Surge pricing is the practice of increasing the price of goods or
+						services
+						when there is the
+						greatest demand for them. If we want to adopt a price-surging strategy, what does the
+						distribution of ride requests look like throughout the day?</p>
+					<p>Ride requests throughout the day exhibit two significant spikes: one between 8am and 10am and
+						another
+						between 4pm and 6pm. These spikes correspond to the morning and afternoon rush hours, indicating
+						high demand during commuting times. After 6pm, ride requests gradually decrease until around
+						8pm.
+						Implementing surge pricing during the morning and afternoon spikes would effectively capture
+						peak
+						demand and maximise revenue. Consideration should be given to weekends, seasonal events, and
+						special
+						events that may further influence demand patterns.</p>
+					<span class="image fit"><img src="images/funnel/bar-ride-request-hour.png" alt="" /></span>
+					<p class="custom-text">5. What part of our funnel has the lowest conversion rate? What can we do to
+						improve this part of
+						the funnel?</p>
+					<p>The lowest conversion rate in our funnel occurs between the driver acceptance and completion of
+						the
+						ride steps, with a rate of 50.77%. This conversion remained low across all age groups and
+						platforms.
+						To improve this, we need to analyse the reasons behind the low conversion. Understanding whether
+						users or drivers are cancelling rides is crucial. We could analyse the available review
+						information
+						for insights on potential issues. Additionally, examining the location and time of
+						cancellations,
+						app usability, and variations among different age groups can provide further ideas for
+						improvement.
+					</p>
+
+					<h2 id="section5">Further Research</h2>
+
+					<ol>
+						<li>Improve the driver acceptance to completion of ride conversion: Analyse the reasons for
+							cancellations and non-completions, considering user and driver behaviour. Analyse review
+							data
+							for insights and consider factors like location, time, app usability, and age group
+							variations.
+							Implement measures to address these issues and optimise the conversion rate in this stage.
+						</li>
+						<li>A/B the significance of the differences in conversion between age group. If significant,
+							explore opportunities to increase sign up for the 18-24 age group and analyse reviews and
+							insights from the 45-54 age group. Use these insights to optimise the user journey for this
+							age
+							group.</li>
+						<li>Consider weekdays, weekends, and special events to further tailor surge pricing strategies
+							and maximise revenue during high-demand periods.</li>
+					</ol>
+
+					<h2 id="section6">Immediate Recommendations</h2>
+
+					<ol>
+						<li>Set-up investigation for why rides only 50% of accepted rides are completed.</li>
+						<li>Focus marketing budget on iOS.</li>
+						<li>Focus marketing efforts on our biggest age group,35-44.</li>
+						<li>Implement surge pricing during the morning (8am-10am) and afternoon (4pm-6pm) spikes,
+							corresponding to peak demand during commuting times.</li>
+
+					</ol>
+
+					<p>By implementing these recommendations, Metrocar can optimise its customer funnel, target specific
+						age
+						groups, improve conversion rates, and maximise revenue through effective pricing strategies.</p>
 			</section>
 
 		</div>

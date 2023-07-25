@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Data Exploration</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Cara Finlay</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<!-- <li class="active"><a href="generic.html">Generic Page</a></li> -->
+				<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			</ul>
+			<ul class="icons">
+				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<span class="date">October, 2022</span>
+					<h1>Prosper Loan</h1>
+					<h3>Lender
+						yields vs estimated loss</h3>
+					<p>This project is centered around data exploration in Python. The data was wrangled and cleaned
+						before conducting Univariate, Bivariate and Multivariate exploration. The findings are
+						presented in the report below.
+
+					</p>
+
+
+				</header>
+
+
+
+				<div class="row">
+
+					<ul class="actions special">
+						<li><a href="https://github.com/caracfinlay/exploratory-analysis-prosper-loan/blob/main/Part_I_exploration_prosper_loan_cfinlay.ipynb"
+								class="button" ;" target="_blank" rel="noopener noreferrer">Python
+								Notebook</a></li>
+					</ul>
+
+
+
+
+
+				</div>
+				<br>
+				<!-- <div class="image main"><img src="images/home/New York City Rental Insights.png" alt="" /></div> -->
+				<h2>Investigation Overview</h2>
+				<p>In the interest of lenders, the goal was to explore the nature of borrowers to determine which loans
+					result in the highest lender yields whilst holding the lowest estimated loss. The exploration dives
+					into the factors influencing the relationship between lender yield and estimated loss. Factors
+					include loan categories, employment status, prosper score and loan terms.</p>
+
+				<h2>Dataset Overview</h2>
+				<p>This data set contains 113,937 loans with 81 variables on each loan. Although the dataset contains
+					information both interesting to borrowers and lenders, only columns relevant to factors influencing
+					lender loan yields were focused on in the exploration. I.e. Prosper Score, Loan Term, Lender Yield,
+					Estimated Yield and Loss, Loan Category, Employment Status, Income Range, Debt To Income Ratio, Loan
+					Amount and Delinquencies.</p>
+
+				<h2>Wrangling Process</h2>
+				<p>
+					<uo>
+						<li>Copy of dataframe containing only necessary key features.</li>
+						<li>Corrected datatypes for some columns.</li>
+						<li>New categorical data column for listing category to provide descriptive reason for loan.
+						</li>
+						<li>Income Range was ordered as it is ordinal categorical data.</li>
+						<li>Dataset was filtered to only include values post July 2009, as the Prosper Score feature was
+							heavily utilized in the dataset. Doing this also minimized NaN values in the dataset.
+						</li>
+						<li>NaN values in the Income Range column was replaced with $0 where employment status is not
+							employed.</li>
+					</uo>
+					<br>
+				</p>
+				<h2>Relational between the Lender Yield vs Estimated Loss given the Employment Status</h2>
+				<p>A positive correlation is observed between with estimate loss and lender yield. The higher the lender
+					yield the higher the estimated loss. Various factors could increase lender yield such as higher
+					interest rates, which are usually implemented when the loan involves risk factors. We also see some
+					unexpected deviation where the lender yield significantly varies given a specific estimated loss.
+				</p>
+
+				<span class="image fit"><img src="images/prosper-loans/yield-vs-loss.png" alt="" /></span>
+				<h2>Relational between the Lender Yield vs Loan Amount</h2>
+				<p>We can observe a negative correlation between lender yield and loan amount. The larger the loan, the
+					smaller the lender yield. One could expect the higher loans to produce a larger lender yield, but
+					the opposite is observed. As previous observations were made that over 40% of borrowers had loans of
+					around 5000 USD, 40 % of borrowers had at least 10 current credit lines, and over 50% of borrowers
+					taking out loans for debt repayment this yield correlation is perhaps not too surprising.</p>
+				<span class="image fit"><img src="images/prosper-loans/yield-vs-loan-amt.png" alt="" /></span>
+				<h2>Relational between the Lender Yield vs Estimated Loss given the Employment Status</h2>
+				<p>We previously observed a positive correlation between the lender yield and estimated loss. The
+					relational plot includes employee status to produce a more granular understanding of this
+					correlation. Key differences between borrowers with an employment status of employed versus full
+					time is observed. The trend of the majority of employed borrowers follow fixed curves in the
+					estimated loss vs lender yield space, however full time employees do not follow these trends and
+					have a much larger spread in lender yield for a given estimated loss.</p>
+				<span class="image fit"><img src="images/prosper-loans/yield-loss-employment.png" alt="" /></span>
+				<h2>Relationship between Lender Yield vs Estimated Loss given the Prosper Score</h2>
+				<p>Here we observe the estimated losses relationship with the prosper score, where the lower the prosper
+					score the higher the estimated loss. Although the same is observed for the lender yield and prosper
+					score relationship, the lender yield varies immensely for given estimated losses. Some factors such
+					as borrower interest rate, delinquent payments, debt to income ratio and income range may
+					potentially increase or decrease lender yield.</p>
+				<span class="image fit"><img src="images/prosper-loans/yield-loss-prosper-score.png" alt="" /></span>
+				<h2>Relationship between the lender yield and estimated loss given the loan term</h2>
+				<p>Differences can be observed in the lender yield for the three different loan terms. 12 month loans
+					have a lower lender yield, but similar estimated loss compared to 36 month and 60 month loans. 60
+					month loans have the highest lender yield. We also see that lender yields around 0.3 for the 36
+					month term have a large range of estimated losses where estimated losses significantly increase.</p>
+				<span class="image fit"><img src="images/prosper-loans/yield-loss-term.png" alt="" /></span>
+				<h2>Conclusions</h2>
+				<uo>
+					<li>A positive correlation exists between loan yields and estimated losses.</li>
+					<li>Higher loan yields and lower estimated losses can be found in the upper left
+						hand quadrant of the multivariate scatter plots.</li>
+
+					<li>Higher loan yields with the lowest estimated losses were found for borrowers
+						in the full time employment category with prosper scores between 6 and 9 for
+						loan terms 36 and 60 months.</li>
+
+					<li>Smaller loans also produced higher yields.</li>
+
+
+				</uo>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+
+
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; ccfinlay</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

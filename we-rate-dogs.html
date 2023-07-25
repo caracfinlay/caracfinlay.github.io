@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Data Wrangling</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Cara Finlay</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<!-- <li class="active"><a href="generic.html">Generic Page</a></li> -->
+				<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+			</ul>
+			<ul class="icons">
+				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+				<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<span class="date">January, 2022</span>
+					<h1>Data Wrangling</h1>
+					<h3>The hidden popularity of <i>We Rate Dog's</i> favourite dog breeds.</h3>
+					<p>In this project data is gathered from multiple sources, including a web scrape of a twitter
+						account using Twitter's API. The primary goal of this project was to assess and then clean the
+						data. Regex was utilised for incoporating real tweets in our analysis.
+
+					</p>
+
+
+				</header>
+
+
+
+				<div class="row">
+
+					<ul class="actions special">
+						<li><a href="https://github.com/caracfinlay/data-wrangling-WeRateDogs/blob/main/wrangle_act-2.ipynb"
+								class="button" ;" target="_blank" rel="noopener noreferrer">Python
+								Notebook</a></li>
+					</ul>
+
+				</div>
+				<br>
+				<h3>Project Sections</h3>
+				<ul>
+					<li><a href="#section1">Findings Report</a></li>
+					<li><a href="#section2">Wrangling Report
+
+				</ul>
+
+				<span class="image fit"><img src="images/we-rate-dogs/we-rate-dogs.png" alt="" /></span>
+
+
+				<!-- <div class="image main"><img src="images/home/New York City Rental Insights.png" alt="" /></div> -->
+				<h2>Findings Report</h2>
+
+
+				<p><a href="https://twitter.com/dog_rates?lang=en"" target=" _blank"
+						rel="noopener noreferrer">WeRateDogs</a> is a Twitter account that rates people's
+					dogs in a
+					humorous comment about the dog. The
+					denominator of these ratings is almost always 10. Emphasising the cuteness of dogs, the
+					numerator,
+					almost always exceeds 10. As part of the fun, dogs are also categorized into a dog
+					"stage" (i.e.
+					doggo, floofer, pupper, and puppo). According to the Dogtionary via the #WeRateDogs book
+					on Amazon;
+					a doggo is a big pupper / older dog, a small doggo is usually younger than a doggo, but
+					can be more
+					mature. A puppo is in a transitional phase between a pupper and a doggo and a floof can
+					be any
+					excessively fluffy and furry dog!
+					<br><br>
+					The tweet data from the WeRateDog’s twitter account was analysed to investigate which
+					tweets
+					containing specific dog breeds perform best. The finding, interestingly, revealed that
+					the most
+					favorited tweets did not contain the same dog breeds as the dog breeds tweeted about
+					most
+					frequently.
+					<br><br>
+
+					The bar graph below illustrates that the dog breed most frequently occurring in tweets
+					is a golden
+					retriever, followed by Labrador retrievers, pembrokes and then chihuahua’s.
+					<span class="image fit"><img src="images/we-rate-dogs/bar-top-20.png" alt="" /></span>
+
+				<p>
+					Overtime, tweets concerning these dogs have decreased, but spikes have recurred.
+					Only tweets
+					containing golden retrievers spiked again at the beginning of 2017. Tweets
+					containing labrador
+					retrievers spiked again in August 2016. Tweets containing pembrokes were high at the
+					beginning of
+					the data period and gradually dropped until June 2016, after which it remained
+					relatively low.
+				</p>
+
+				<span class="image fit"><img src="images/we-rate-dogs/line-rolling-mean-3 most-tweeted.png"
+						alt="" /></span>
+
+				<p>It is interesting to see however, that tweets with the highest average favourite
+					count do not concern
+					the breeds most often tweeted about. The English Springer breed has received the
+					highest favourite
+					count on average per tweet and it’s average favourite count is significantly higher
+					than other
+					breeds.
+					Could these dogs be the more popular breeds to tweet about?</p>
+				<span class="image fit"><img src="images/we-rate-dogs/bar-top-ten-breeds.png" alt="" /></span>
+				<p>Other potential factors contributing toward the popularity of a tweet would be
+					valuable for this
+					analysis. Perhaps tweets promoting animal needs, rights, charities or significant
+					events would
+					increase engagement of tweets and cause tweets to go more viral. It is also
+					necessary to consider
+					the amount of tweets per dog breed in the above aggregation calculation. It is
+					possible that a few
+					viral tweets may have skewed these numbers.</p>
+
+				<h2 id=section2>Wrangling Report</h2>
+				<h3>Brief:</h3>
+				<p>The dataset wrangled (and analyzed and visualized) in this data wrangling project
+					from Udacity is the
+					tweet archive of Twitter user @dog_rates, also known as WeRateDogs. WeRateDogs is a
+					Twitter account
+					that rates people's dogs with a humorous comment about the dog.</p>
+				<h3>Objective:</h3>
+				<uo>
+					<li>Gather and import data from three different sources and formats.</li>
+					<li>Assess the data visually and programmatically.</li>
+					<li>Wrangle the data using a three step process of defining the wrangle, writing code
+						and testing the outcome. Eight quality issues and three tidiness issues were
+						identified and processed in this project.</li>
+					<li>Three insights and visualisations were produced for the analysis of the final dataset.</li>
+					<li>Jupyter Notebooks and Python was used for the wrangling and analysis process and
+						the following Python libraries were utilised: re, pandas, requests, numpy, json,
+						matplotlib.pyplot, tweepy</li>
+
+				</uo>
+				<br>
+				<h3>Gathering the data:</h3>
+
+				<p>This data analysis consists of three datasets gathered from three different sources.</p>
+
+				<ol>
+					<li>The WeRateDogs Twitter archive - this is a .csv file provided by Udacity. This archive
+						contains
+						basic tweet data (tweet ID, timestamp, text, etc.) for all 5000+ of WeRateDogs tweets as
+						they
+						stood on August 1, 2017</li>
+					<li>The tweet image predictions - this is a .tsv file also provided by Udacity. Images of the
+						tweets
+						were run through a neural network to classify breeds of dogs present in tweets.</li>
+					<li>Additional data from the Twitter API was gathered to produce the retweet count and favorite
+						count of the tweets. Only the last 3000 tweets are available for download using the Twitter
+						API
+						and thus we have this data missing from the earlier tweets in the WeRateDogs Twitter
+						archive.
+					</li>
+
+				</ol>
+				<h3>Assessing the Data:</h3>
+				<p>For the assessment of the data I visually assessed the three datasets using excel and viewing the
+					dataframe in the Jupyter Notebook.
+					<br><br>Some key findings:
+				</p>
+				<uo>
+					<li>Missing values were sometimes written as ‘None’.</li>
+					<li>URLs couldn’t be accessed in columns where more than one URL existed.</li>
+					<li>Some of the names in the Tweet image predictions dataset were incorrectly
+						extracted.</li>
+					<li>Many columns existed between the three datasets, some of them were redundant as
+						they were repeated among the datasets.</li>
+					<li>The image prediction dataset was difficult to understand and data could be extracted
+						from this dataset to produce some useful columns i.e. the dog breeds.
+					</li>
+					<li>In the image prediction dataset the ‘doggo’, ‘floofer’,’pupper’ and ‘puppo’ columns had many
+						missing values and it had to be determined whether this data was useful
+						and could be simplified into a single column.
+					</li>
+				</uo>
+
+				<p>The programmatic assessment included a standard set of steps using df.shape(), df.head(),
+					df.info().
+					<br><br>Some key findings:
+				</p>
+
+				<uo>
+					<li>The json file from the Twitter API didn’t have a common column name to join the
+						other two datasets to.</li>
+					<li>Some of the columns were the incorrect datatype. I.e. twitter_ids were an int,
+						timestamp was a string.</li>
+
+					<li>The 'doggo', 'floofer', 'pupper', 'puppo' columns were investigated to see if any of the
+						rows contained more than one of these four categories. If each row is only subject to one
+						category, we can perhaps merge these columns into one. 14 rows have more than one of the
+						four
+						categories. Only 16.37 % of the data in these columns was available, therefore it was
+						decided to
+						not include these columns in the analysis.</li>
+					<li>The dataset contained tweets retweeted by WeRateDog’s. These had to be removed.
+					</li>
+
+				</uo>
+
+				</p>
+				<h2>Quality issues</h2>
+				<p>Before addressing quality issues, copies of each dataframe was made and the dataframes were
+					merged.
+
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Observation</th>
+								<th>Solution</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Dataset contains retweets and replies.</td>
+								<td>We can remove rows by using Pandas .isna() method on `retweeted_status_id`,
+									`in_reply_to_user_id` and `in_reply_to_status_id` columns and only keeping rows
+									that
+									have a NaN value in this column.</td>
+							</tr>
+							<tr>
+								<td>tweet_id is an int not a string.</td>
+								<td>Column datatype was changed using the .astype(str) method.</td>
+							</tr>
+							<tr>
+								<td>timestamp is a string not a timedelta.</td>
+								<td> Column datatype was changed to a datetime64 object using pd.to_datetime. This
+									allows for extraction of date parts.</td>
+							</tr>
+							<tr>
+								<td>Incorrect rating for some tweets.</td>
+								<td>Less than 1 % of the data is not equal to a denominator of 10. All these entries
+									were removed, so that a consistent rating system can be observed, since some of
+									the
+									larger ratings were assigned to a group of dogs. Some of the numerator ratings
+									were
+									also extracted incorrectly and need to be identified using regex on the text
+									column.
+									Datatype of ratings needs to be float.</td>
+							</tr>
+							<tr>
+								<td>Some names extracted incorrectly.</td>
+								<td>Some of the tweets don't have dog names in them, but other words have been
+									falsely
+									identified as names, such as, 'a', 'an', 'the'. These words were identified in
+									the
+									name column by searching for names starting with a lowercase letter. Regular
+									expressions were used to identify these and the .replace() function to replace
+									them
+									with NaN values.</td>
+							</tr>
+							<tr>
+								<td>'None' values should be converted to NaN.</td>
+								<td>Using the .replace('None',np.nan) function across the dataframe, all missing
+									values
+									were correctly assigned as NaN values.</td>
+							</tr>
+							<tr>
+								<td>Some urls are duplicated in the expanded_urls column and aren’t separate items
+									in a
+									list, making it difficult to access them.</td>
+								<td>The urls were split using a deliminator ',' so that they are separate items in a
+									list. The list was then converted to a set, automatically dropping any duplicate
+									urls.</td>
+							</tr>
+							<tr>
+								<td>Columns contain dog breeds as well as other objects.td>
+								<td> A function was written and applied to the dataframe to identify rows containing
+									dog
+									breeds and replacing all irrelevant objects with NaN.</td>
+							</tr>
+							<tr>
+								<td>source column can be simplified.td>
+								<td>Since there are only four common values in the `source` column, these values
+									were
+									replaced to be more readable and change the column datatype from a string
+									(pandas
+									object) to a category. This is done using .replace and .astype('category')</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+				</div>
+
+				<h2>Tidiness issues</h2>
+
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Observation</th>
+								<th>Solution</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Datasets have duplicate columns and relevant data is not merged.</td>
+								<td>Join dataframes using a left join. This step took place before addressing
+									quality
+									issues so that quality issues pertaining to more than one dataset could be
+									addressed
+									simultaneously.</td>
+							</tr>
+							<tr>
+								<td>The doggo, pupper, floofer and puppo columns should be merged into one column.
+								</td>
+								<td>The columns identifying dog stages can be merged into a single column. If some
+									rows
+									contain more than one dog stage, the stages can be separated by a ',' delimiter.
+								</td>
+							</tr>
+							<tr>
+								<td>Unnecessary columns.</td>
+								<td> Remove and reorder columns not needed for analysis. I.e. most columns
+									originally
+									from the image_predictions dataframe were dropped as one column with dog_breeds
+									was
+									extracted from the data.</td>
+							</tr>
+							<tr>
+								<td>timestamp column not split into simpler counter parts.</td>
+								<td>Using pd.DatetimeIndex the month, day and year can be extracted and assigned as
+									their own columns. This provides efficient access for future time series
+									analysis.
+								</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+					</p>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+
+
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; ccfinlay</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
